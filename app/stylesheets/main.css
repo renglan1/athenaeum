@@ -82,7 +82,7 @@ header {
   }
 }
 header h1 {
-  flex: 0 0 70%;
+  flex: 0 0 60%;
   display: flex;
   justify-content: space-between;
 }
