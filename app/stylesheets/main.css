@@ -59,37 +59,41 @@ header {
   z-index: 100;
   display: flex;
   justify-content: center;
-}
-
-header h1 {
+  align-items: center;
   font-size: 3em;
   font-weight: 700;
   transition: 0.5s;
-  flex: 0 0 70%;
-  display: flex;
-  justify-content: space-between;
   color: white;
-  font-weight: 700;
   text-transform: uppercase;
 }
 @media only screen and (min-width: 798px) {
-  header h1 {
+  header {
     font-size: 4em;
   }
 }
 @media only screen and (min-width: 1920px) {
-  header h1 {
+  header {
     font-size: 6em;
   }
 }
 @media only screen and (max-width: 320px) {
-  header h1 {
+  header {
     font-size: 2em;
   }
 }
+header h1 {
+  flex: 0 0 70%;
+  display: flex;
+  justify-content: space-between;
+}
+header .icon-athenaeum:before {
+  font-size: 2em;
+}
+header .icon-athenaeum {
+  margin-right: 0.5em;
+}
 
 html {
-  @import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
   font-size: 1em;
   font-family: "Philosopher", sans-serif;
   font-weight: 300;

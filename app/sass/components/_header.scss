@@ -4,17 +4,12 @@ header{
 
     display: flex;
     justify-content: center;
-}
+    align-items: center;
 
-header h1{
     font-size: 3em;
     font-weight: 700;
     transition: 0.5s;
-    flex: 0 0 70%;
-    display: flex;
-    justify-content: space-between;
     color: white;
-    font-weight: 700;
     text-transform: uppercase;
 
     @media only screen and (min-width: 798px){
@@ -27,5 +22,19 @@ header h1{
 
     @media only screen and (max-width: 320px){
         font-size: 2em;
+    }
+
+    h1{
+        flex: 0 0 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .icon-athenaeum:before{
+        font-size: 2em;
+    }
+
+    .icon-athenaeum{
+        margin-right: 0.5em;
     }
 }
