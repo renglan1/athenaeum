@@ -1,0 +1,6 @@
+@mixin default-font{
+    @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+    font-size: 1em;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 300;
+}
