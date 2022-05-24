@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="fx">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Aetha">
@@ -8,25 +8,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="stylesheets/main.css">
+
     <!--Favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="../res/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../res/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../res/images/favicon-16x16.png">
     <link rel="manifest" href="../res/images/site.webmanifest">
 
+    <!--Scripts-->
+    <script src="scripts/toggle-fx.js" defer></script>
+    <script src="scripts/load-fx.js" defer></script>
+
     <title>Athenaeum</title>
 </head>
 <body>
     <div class="root">
-        <div id="homepage-layout">
-            <header>
-            </header>
+        <header>
+        </header>
 
-            <video src="../res/videos/nyx-bg.mp4" muted loop autoplay></video>
+        <button id="toggle-fx">Effects on/off</button>
 
-            <main>
-            </main>
-        </div>
+        <video class="background" preload="none" muted loop autoplay>
+            <source src="../res/videos/backgrounds/nyx.mp4">
+        </video>
+
+        <main>
+        </main>
     </div>
 </body>
 </html>
