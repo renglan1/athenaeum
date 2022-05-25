@@ -20,7 +20,7 @@ header{
         font-size: 6em;
     }
 
-    @media only screen and (max-width: 320px){
+    @media only screen and (max-width: 500px){
         font-size: 2em;
     }
 
@@ -28,6 +28,12 @@ header{
         flex: 0 0 60%;
         display: flex;
         justify-content: space-between;
+    }
+
+    span{
+        &:hover{
+            cursor: default;
+        }
     }
 
     .icon-athenaeum:before{
