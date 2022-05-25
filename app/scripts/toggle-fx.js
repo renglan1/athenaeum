@@ -1,20 +1,19 @@
 toggleButton = document.querySelector("button#toggle-fx");
 toggleButton.addEventListener("click", function(){
     const fxState = localStorage.getItem("fxState");
-    toggleFX(fxState);
+    const bgName = localStorage.getItem("bgName");
+    toggleFX(fxState, bgName);
 });
 
 function toggleFX(curFXState) {
     console.log("toggleFX curFXState: " + curFXState);
 
     if(curFXState === "off"){
-        localStorage.setItem("fxState", "on");
         setFXClass("on");
-        setVideoBackground("on");
+        setVideoBackground("on", bgName);
     }
     else{
-        localStorage.setItem("fxState", "off");
         setFXClass("off");
-        setVideoBackground("off");
+        setVideoBackground("off", bgName);
     }
 }
