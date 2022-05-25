@@ -114,6 +114,12 @@ html {
     padding: 5em 2.5em;
   }
 }
+.root video.background {
+  z-index: -999;
+}
+.root img.background {
+  z-index: -1000;
+}
 
 #toggle-fx {
   position: absolute;
@@ -129,7 +135,6 @@ html {
   height: 100%;
   object-fit: cover;
   opacity: 1;
-  z-index: -1000;
 }
 
 /*# sourceMappingURL=main.css.map */

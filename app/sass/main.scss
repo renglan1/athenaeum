@@ -19,6 +19,14 @@ html{
     @media only screen and (min-width: 798px) {
         padding: 5em 2.5em;
     }
+
+    video.background{
+        z-index: -999;
+    }
+
+    img.background{
+        z-index: -1000;
+    }
 }
 
 #toggle-fx{
@@ -35,5 +43,4 @@ html{
     height: 100%;
     object-fit: cover;
     opacity: 1;
-    z-index: -1000;
 }
