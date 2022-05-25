@@ -1,3 +1,5 @@
+@use "../base/fonts";
+
 header{
     width: 100%;
     z-index: 100;
@@ -6,12 +8,13 @@ header{
     justify-content: center;
     align-items: center;
 
+    @include fonts.contrast-font;
     font-size: 3em;
     font-weight: 700;
     transition: 0.5s;
-    color: white;
+    
     text-transform: uppercase;
-    text-shadow: 1px 1px 10px black;
+    
 
     @media only screen and (min-width: 798px){
         font-size: 4em;
