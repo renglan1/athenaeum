@@ -1,5 +1,5 @@
-toggleButton = document.querySelector("button#toggle-fx");
-toggleButton.addEventListener("click", function(){
+fxToggleButton = document.querySelector("i#toggle-fx-button");
+fxToggleButton.addEventListener("click", function(){
     const fxState = localStorage.getItem("fxState");
     const bgName = localStorage.getItem("bgName");
     toggleFX(fxState, bgName);

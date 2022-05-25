@@ -101,7 +101,7 @@ header .icon-athenaeum {
   margin-right: 0.5em;
 }
 
-.settings-menu {
+#settings-menu {
   position: absolute;
   height: 100px;
   width: 100%;
@@ -109,9 +109,19 @@ header .icon-athenaeum {
   left: 0;
   z-index: -102;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  /*"All /direct/ decendents of .settings-menu*/
+}
+#settings-menu > * {
+  margin: 0em 0.5em;
+}
+#settings-menu > *:hover {
+  cursor: pointer;
 }
 
-.settings-menu-toggle {
+#settings-menu-toggle {
   color: white;
   text-shadow: 1px 1px 10px black;
   font-size: 1.5em;
@@ -121,7 +131,7 @@ header .icon-athenaeum {
   transform: translateX(-50%);
   transition: 0.5s;
 }
-.settings-menu-toggle:hover {
+#settings-menu-toggle:hover {
   cursor: pointer;
 }
 

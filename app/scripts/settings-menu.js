@@ -1,39 +1,53 @@
-const settingsMenuToggle = document.querySelector(".settings-menu-toggle");
+const settingsMenuToggle = document.querySelector("#settings-menu-toggle");
+const settingsMenuRevealed = "100px";
+const settingsMenuPreviewed = "0.5vh";
+const settingsMenuHidden = "0px";
 
 settingsMenuToggle.addEventListener("click", function(){
-    const root = document.querySelector(".root");
-    const rootBottom = root.style.bottom;
-
-    if(rootBottom != "100px"){
-        root.style.bottom = "100px";
-        settingsMenuToggle.classList = "settings-menu-toggle fa-solid fa-xmark";
+    if(isSettingsMenuRevealed()){
+        hideSettingsMenu();
     }
     else{
-        root.style.bottom = "0px";
-        settingsMenuToggle.classList = "settings-menu-toggle fa-solid fa-ellipsis";
+        revealSettingsMenu();
     }
 });
 
 settingsMenuToggle.addEventListener("mouseenter", function(){
-    const root = document.querySelector(".root");
-    const rootBottom = root.style.bottom;
-
     settingsMenuToggle.style.transform = "translateX(-50%) translateY(-0.5vh) scale(1.1)";
     
-    if(rootBottom != "100px"){
-        root.style.bottom = "0.5vh";
+    if(!isSettingsMenuRevealed()){
+        previewSettingsMenu();
     }
 });
 
 settingsMenuToggle.addEventListener("mouseleave", function() {
-    const root = document.querySelector(".root");
-    const rootBottom = root.style.bottom;
-    console.log("rootBottom: " + rootBottom);
-    
     settingsMenuToggle.style.transform = "translateX(-50%) translateY(-0.5vh) scale(1)";
 
-    if(rootBottom === "0.5vh"){
-        root.style.bottom = "0px";
+    if(!isSettingsMenuRevealed()){
+        hideSettingsMenu();
     }
 });
 
+function revealSettingsMenu(){
+    root.style.bottom = settingsMenuRevealed;
+    settingsMenuToggle.classList = "fa-solid fa-xmark";
+}
+
+function previewSettingsMenu(){
+    root.style.bottom = settingsMenuPreviewed;
+}
+
+function hideSettingsMenu(){
+    root.style.bottom = settingsMenuHidden;
+    settingsMenuToggle.classList = "fa-solid fa-ellipsis";
+}
+
+function isSettingsMenuRevealed(){
+    const rootBottom = root.style.bottom;
+    return rootBottom === settingsMenuRevealed;
+}
+
+function isSettingsMenuPreviewed(){
+    const rootBottom = root.style.bottom;
+    return rootBottom === settingsMenuPreviewed;
+}

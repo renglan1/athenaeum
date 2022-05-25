@@ -22,6 +22,7 @@
     <link rel="manifest" href="../res/images/favicon/site.webmanifest">
 
     <!--Scripts-->
+    <script src="scripts/main.js" defer></script>
     <script src="scripts/toggle-fx.js" defer></script>
     <script src="scripts/settings-menu.js" defer></script>
 
@@ -49,10 +50,11 @@
         <main>
         </main>
 
-        <i class="settings-menu-toggle fa-solid fa-ellipsis"></i>
+        <i id="settings-menu-toggle" class="fa-solid fa-ellipsis"></i>
     </div>
-    <div class="settings-menu">
-        <button id="toggle-fx">Effects on/off</button>
+    <div id="settings-menu">
+        <i id="toggle-fx-button" class="fa-solid fa-wand-magic-sparkles"></i>
+        <i id="volume-button" class="fa-solid fa-volume-xmark"></i>
     </div>
 </body>
 
