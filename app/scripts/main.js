@@ -1,4 +1,4 @@
-const menuIDs = ["#settings-menu", "#settings-menu-toggle"];
+const menuItemIDs = ["#settings-menu", "#settings-menu-toggle"];
 
 // Automatic hiding of the menu when page clicked
 window.addEventListener("click", function (event) {
@@ -10,8 +10,8 @@ window.addEventListener("click", function (event) {
 function gatherMenuItems() {
     const menuItems = [];
 
-    for (const menuID of menuIDs) {
-        menuItems.push(document.querySelector(menuID));
+    for (const menuItemID of menuItemIDs) {
+        menuItems.push(document.querySelector(menuItemID));
     }
 
     return menuItems;

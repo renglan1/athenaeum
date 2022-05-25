@@ -32,20 +32,23 @@
 <body>
     <div class="root">
         <script src="scripts/load-fx.js"></script>
-        <header>
-            <span class="icon-athenaeum"></span>
-            <h1 title="Ah-thuh-nee-im">
-                <span>A</span>
-                <span>t</span>
-                <span>h</span>
-                <span>e</span>
-                <span>n</span>
-                <span>a</span>
-                <span>e</span>
-                <span>u</span>
-                <span>m</span>
-            </h1>
-        </header>
+
+        <div class="header-container">
+            <header>
+                <span class="icon-athenaeum"></span>
+                <h1 title="Ah-thuh-nee-im">
+                    <span>A</span>
+                    <span>t</span>
+                    <span>h</span>
+                    <span>e</span>
+                    <span>n</span>
+                    <span>a</span>
+                    <span>e</span>
+                    <span>u</span>
+                    <span>m</span>
+                </h1>
+            </header>
+        </div>
 
         <main>
         </main>
@@ -53,8 +56,12 @@
         <i id="settings-menu-toggle" class="fa-solid fa-ellipsis"></i>
     </div>
     <div id="settings-menu">
-        <i id="toggle-fx-button" class="fa-solid fa-wand-magic-sparkles"></i>
-        <i id="volume-button" class="fa-solid fa-volume-xmark"></i>
+        <div class="settings-menu-options">
+            <i id="toggle-fx-button" class="fa-solid fa-wand-magic-sparkles"></i>
+            <i id="background-chooser-button" class="fa-solid fa-image"></i>
+            <i id="volume-button" class="fa-solid fa-volume-xmark"></i>
+        </div>
+        <span class="icon-athenaeum"></span>
     </div>
 </body>
 

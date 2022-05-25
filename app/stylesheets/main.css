@@ -56,10 +56,15 @@ table {
   border-spacing: 0;
 }
 
+.header-container {
+  position: relative;
+  width: 100%;
+}
+
 header {
-  position: fixed;
+  position: absolute;
   top: 1em;
-  min-width: 100%;
+  width: 100%;
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -68,7 +73,7 @@ header {
   text-shadow: 1px 1px 10px black;
   font-size: 3em;
   font-weight: 700;
-  transition: font-size 0.5s;
+  transition: font-size 0.5s, transform 1s;
   text-transform: uppercase;
 }
 @media only screen and (min-width: 798px) {
@@ -111,14 +116,42 @@ header .icon-athenaeum {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 35px;
-  /*"All /direct/ decendents of .settings-menu*/
 }
-#settings-menu > * {
+#settings-menu span {
+  position: absolute;
+  font-size: 3.5em;
+  right: 1vw;
+  transition: font-size display 0.5s;
+}
+@media only screen and (min-width: 1920px) {
+  #settings-menu span {
+    font-size: 4.5em;
+  }
+}
+@media only screen and (min-width: 798px) {
+  #settings-menu span {
+    font-size: 4em;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #settings-menu span {
+    display: none;
+  }
+}
+
+/*"All /direct/ decendents of .settings-menu*/
+.settings-menu-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+}
+.settings-menu-options > * {
   margin: 0em 0.5em;
 }
-#settings-menu > *:hover {
+.settings-menu-options > *:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 #settings-menu-toggle {
