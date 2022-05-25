@@ -4,20 +4,24 @@
 
 @import "base/reset"; 
 
-@import "components/header.scss";
+@import "components/header";
+@import "components/settings-menu";
+
+$settings-menu-size: 100px;
 
 html{
     @include fonts.default-font;
 }
 
 .root{
-    position: relative;
-    min-height: 100vh;
+    position: absolute;
+    right: 0;
+    height: 100%;
     min-width: 100vw;
-    padding: 5em 1em;
+    padding: 0em 1em;
 
     @media only screen and (min-width: 798px) {
-        padding: 5em 2.5em;
+        padding: 0em 2.5em;
     }
 
     video.background{
@@ -27,12 +31,14 @@ html{
     img.background{
         z-index: -1000;
     }
+
+    &.active{
+        bottom: $settings-menu-size;
+    }
 }
 
 #toggle-fx{
-    position: absolute;
-    bottom: 0;
-    left: 0;
+
 }
 
 .background{

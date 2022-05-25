@@ -20,6 +20,8 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
@@ -55,7 +57,9 @@ table {
 }
 
 header {
-  width: 100%;
+  position: fixed;
+  top: 1em;
+  min-width: 100%;
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -104,14 +108,15 @@ html {
 }
 
 .root {
-  position: relative;
-  min-height: 100vh;
+  position: absolute;
+  right: 0;
+  height: 100%;
   min-width: 100vw;
-  padding: 5em 1em;
+  padding: 0em 1em;
 }
 @media only screen and (min-width: 798px) {
   .root {
-    padding: 5em 2.5em;
+    padding: 0em 2.5em;
   }
 }
 .root video.background {
@@ -120,11 +125,8 @@ html {
 .root img.background {
   z-index: -1000;
 }
-
-#toggle-fx {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.root.active {
+  bottom: 100px;
 }
 
 .background {
