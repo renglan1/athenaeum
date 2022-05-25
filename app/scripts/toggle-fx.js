@@ -5,15 +5,19 @@ toggleButton.addEventListener("click", function(){
     toggleFX(fxState, bgName);
 });
 
-function toggleFX(curFXState) {
-    console.log("toggleFX curFXState: " + curFXState);
+function toggleFX(fxState, bgName) {
+    const html = document.querySelector("html");
+    const oppositeState = invertFXState(fxState);
 
-    if(curFXState === "off"){
-        setFXClass("on");
-        setVideoBackground("on", bgName);
+    html.classList.toggle("fx");
+    localStorage.setItem("fxState", oppositeState)
+    setVideoBackground(oppositeState, bgName);
+}
+
+function invertFXState(fxState){
+    if(fxState === "on"){
+        return "off";
     }
-    else{
-        setFXClass("off");
-        setVideoBackground("off", bgName);
-    }
+
+    return "on";
 }

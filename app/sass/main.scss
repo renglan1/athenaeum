@@ -1,4 +1,5 @@
 @use "base/fonts";
+@use "base/globals";
 
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
 
@@ -7,33 +8,33 @@
 @import "components/header";
 @import "components/settings-menu";
 
-$settings-menu-size: 100px;
-
 html{
     @include fonts.default-font;
 }
 
 .root{
     position: absolute;
-    right: 0;
-    height: 100%;
+    display: flex;
+    bottom: 0; 
     min-width: 100vw;
+    height: 100%;
     padding: 0em 1em;
+    transition: bottom 0.5s; 
 
     @media only screen and (min-width: 798px) {
         padding: 0em 2.5em;
     }
 
     video.background{
-        z-index: -999;
+        z-index: -100;
     }
 
     img.background{
-        z-index: -1000;
+        z-index: -101;
     }
 
     &.active{
-        bottom: $settings-menu-size;
+        bottom: globals.$settings-menu-size;
     }
 }
 

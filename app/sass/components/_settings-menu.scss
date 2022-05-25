@@ -1,0 +1,28 @@
+@use "../base/fonts";
+@use "../base/globals";
+
+.settings-menu{
+    position: absolute;
+    height: globals.$settings-menu-size; 
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -102;
+
+    display: flex;
+}
+
+.settings-menu-toggle{
+    @include fonts.contrast-font;
+    
+    font-size: 1.5em;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
