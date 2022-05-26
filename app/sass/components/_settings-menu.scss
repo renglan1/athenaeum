@@ -9,7 +9,7 @@
 }
 
 #settings-menu{
-    @include fonts.contrast-font(black);
+    @include fonts.contrast-font(white);
     
     position: absolute;
     height: globals.$settings-menu-size; 

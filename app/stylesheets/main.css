@@ -107,8 +107,8 @@ header .icon-athenaeum {
 }
 
 #settings-menu {
-  color: black;
-  text-shadow: 1px 1px 10px white;
+  color: white;
+  text-shadow: 1px 1px 10px black;
   position: absolute;
   height: 100px;
   width: 100%;
@@ -186,8 +186,9 @@ html {
 }
 #page #page-background-overlay {
   min-height: 100vh;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(224, 250, 255);
   opacity: 0.05;
+  z-index: 1;
 }
 #page #page-background-image {
   min-height: 100vh;

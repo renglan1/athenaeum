@@ -22,8 +22,9 @@ html{
 
     #page-background-overlay{
         min-height: 100vh;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(224, 250, 255);
         opacity: 0.05;
+        z-index: 1;
     }
  
     #page-background-image{
