@@ -176,19 +176,29 @@ html {
   font-weight: 300;
 }
 
-body {
-  background-size: cover;
+#page {
+  position: absolute;
+  bottom: 0;
+  z-index: -1000;
+  min-width: 100vw;
+  height: 100px;
+  overflow: hidden;
 }
-body #overlay {
+#page #page-background-overlay {
+  min-height: 100vh;
   background-color: rgb(255, 255, 255);
   opacity: 0.05;
-  z-index: -1000;
 }
-body #menu-background {
-  z-index: -1001;
+#page #page-background-image {
+  min-height: 100vh;
+  transform: rotateX(180deg);
+}
+#page #page-background-video {
+  min-height: 100vh;
+  transform: rotateX(180deg);
 }
 
-.root {
+#root {
   position: absolute;
   display: flex;
   bottom: 0;
@@ -198,17 +208,17 @@ body #menu-background {
   transition: bottom 0.5s;
 }
 @media only screen and (min-width: 798px) {
-  .root {
+  #root {
     padding: 0em 2.5em;
   }
 }
-.root video.background {
+#root video.background {
   z-index: -100;
 }
-.root img.background {
+#root img.background {
   z-index: -101;
 }
-.root.active {
+#root.active {
   bottom: 100px;
 }
 

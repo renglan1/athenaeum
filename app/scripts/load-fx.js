@@ -1,15 +1,19 @@
 const html = document.querySelector("html");
-const root = document.querySelector(".root");
 const fxState = localStorage.getItem("fxState");
 console.log("fxState: " + fxState);
+
+const rootBackgroundImage = document.querySelector("img#root-background-image");
+const pageBackgroundImage = document.querySelector("img#page-background-image");
 
 // !!TEMP!!
 localStorage.setItem("bgName", "neptune");
 bgName = localStorage.getItem("bgName");
 
 setFXClass(fxState);
-setImageBackground(bgName);
-setVideoBackground(fxState, bgName);
+setImageBackground(rootBackgroundImage, bgName);
+setImageBackground(pageBackgroundImage, bgName);
+setVideoBackground(fxState, "root", bgName);
+setVideoBackground(fxState, "page", bgName);
 
 function setFXClass(fxState){
     if(fxState === "on"){
@@ -22,10 +26,13 @@ function setFXClass(fxState){
     }
 }
 
-function setVideoBackground(fxState, bgName) {
+function setVideoBackground(fxState, parentID, bgName) {
+    const parent = document.querySelector(`#${parentID}`);
+    
     if (fxState === "on") {
         const background = document.createElement("video");
         background.className = "background";
+        background.id = `${parentID}-background-video`;
 
         background.setAttribute("preload", "none");
         background.muted = true;
@@ -33,9 +40,7 @@ function setVideoBackground(fxState, bgName) {
         background.autoplay = true;
         background.src = `../res/videos/backgrounds/${bgName}.mp4`;
 
-        console.log(background);
-
-        root.appendChild(background);
+        parent.appendChild(background);
     }
     else{
         if(background = document.querySelector("video.background")){
@@ -44,12 +49,6 @@ function setVideoBackground(fxState, bgName) {
     }
 }
 
-function setImageBackground(bgName){
-    const background = document.createElement("img");
-    background.className = "background";
-    background.src = `../res/images/backgrounds/${bgName}.png`;
-    root.appendChild(background);
-
-    const menuBackground = document.querySelector("#menu-background");
-    menuBackground.src = `../res/images/backgrounds/${bgName}.png`;
+function setImageBackground(element, bgName){
+    element.src = `../res/images/backgrounds/${bgName}.png`;
 }

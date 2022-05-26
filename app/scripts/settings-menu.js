@@ -1,5 +1,6 @@
 const settingsMenuToggle = document.querySelector("#settings-menu-toggle");
 const header = document.querySelector("header");
+const page = document.querySelector("#page");
 
 const settingsMenuRevealed = "100px";
 const settingsMenuPreviewed = "0.5vh";
@@ -32,12 +33,14 @@ settingsMenuToggle.addEventListener("mouseleave", function() {
 
 function revealSettingsMenu(){
     root.style.bottom = settingsMenuRevealed;
+    page.style.height = settingsMenuRevealed;
     header.style.transform = "translateY(100px)";
     settingsMenuToggle.classList = "fa-solid fa-xmark";
 }
 
 function previewSettingsMenu(){
     root.style.bottom = settingsMenuPreviewed;
+    page.style.height = settingsMenuPreviewed;
 }
 
 function hideSettingsMenu(){

@@ -12,21 +12,32 @@ html{
     @include fonts.default-font;
 }
 
-body{
-    background-size: cover;
+#page{
+    position: absolute;
+    bottom: 0;
+    z-index: -1000;
+    min-width: 100vw;
+    height: 100px;
+    overflow: hidden;
 
-    #overlay{
+    #page-background-overlay{
+        min-height: 100vh;
         background-color: rgb(255, 255, 255);
         opacity: 0.05;
-        z-index: -1000;
+    }
+ 
+    #page-background-image{
+        min-height: 100vh;
+        transform: rotateX(180deg);
     }
 
-    #menu-background{
-        z-index: -1001;
+    #page-background-video{
+        min-height: 100vh;
+        transform: rotateX(180deg);
     }
 }
 
-.root{
+#root{
     position: absolute;
     display: flex;
     bottom: 0; 
