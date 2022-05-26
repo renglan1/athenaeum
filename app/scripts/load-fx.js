@@ -47,8 +47,9 @@ function setVideoBackground(fxState, bgName) {
 function setImageBackground(bgName){
     const background = document.createElement("img");
     background.className = "background";
-
     background.src = `../res/images/backgrounds/${bgName}.png`;
-
     root.appendChild(background);
+
+    const menuBackground = document.querySelector("#menu-background");
+    menuBackground.src = `../res/images/backgrounds/${bgName}.png`;
 }

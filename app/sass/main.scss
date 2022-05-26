@@ -12,6 +12,20 @@ html{
     @include fonts.default-font;
 }
 
+body{
+    background-size: cover;
+
+    #overlay{
+        background-color: rgb(255, 255, 255);
+        opacity: 0.05;
+        z-index: -1000;
+    }
+
+    #menu-background{
+        z-index: -1001;
+    }
+}
+
 .root{
     position: absolute;
     display: flex;
@@ -19,7 +33,7 @@ html{
     min-width: 100vw;
     height: 100%;
     padding: 0em 1em;
-    transition: bottom 0.5s; 
+    transition: bottom 0.5s;
 
     @media only screen and (min-width: 798px) {
         padding: 0em 2.5em;
@@ -45,5 +59,4 @@ html{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 1;
 }

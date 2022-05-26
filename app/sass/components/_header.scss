@@ -16,7 +16,7 @@ header{
     justify-content: center;
     align-items: center;
 
-    @include fonts.contrast-font;
+    @include fonts.contrast-font(white);
     font-size: 3em;
     font-weight: 700;
     transition: font-size 0.5s, transform 1s;
