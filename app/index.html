@@ -27,16 +27,20 @@
     <script src="scripts/toggle-fx.js" defer></script>
     <script src="scripts/menus/settings-menu.js" defer></script>
     <script src="scripts/menus/background-menu.js" defer></script>
-    <script src="scripts/menus/menu-globals.js" defer></script>
+    <script src="scripts/menus/menu.js" defer></script>
 
 
     <title>Athenaeum</title>
 </head>
 
 <body>
-    <div id="page">
-        <img id="page-background-image" class="background" src="">
-        <div id="page-background-overlay" class="background"></div>
+    <div id="page-container">
+        <div id="page">
+            <div id="page-background-container">
+                <img id="page-background-image" class="background" src="">
+                <div id="page-background-overlay" class="background"></div>
+            </div>
+        </div>
     </div>
     <div id="root">
         <img id="root-background-image" class="background" src="">
@@ -66,7 +70,7 @@
         </div>
     </div>
     <div id="settings-menu">
-        <div class="settings-menu-options">
+        <div id="settings-menu-options">
             <i id="toggle-fx-button" class="fa-solid fa-wand-magic-sparkles"></i>
             <i id="background-button" class="fa-solid fa-image"></i>
             <i id="volume-button" class="fa-solid fa-volume-xmark"></i>

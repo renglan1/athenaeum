@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
 
 @import "base/reset"; 
+@import "base/layers";
 
 @import "components/header";
 @import "components/settings-menu";
@@ -13,19 +14,30 @@ html{
     @include fonts.default-font;
 }
 
+#page-container{
+    position: relative;
+    min-width: 100vw;
+    height: 100vh;
+    overflow: clip;
+}
+
 #page{
     position: absolute;
-    bottom: 0;
-    z-index: -1000;
-    min-width: 100vw;
-    height: 100px;
-    overflow: hidden;
+    overflow: clip;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: translateY(100vh);
+    overflow: visible;
+}
 
+#page-background-container{
+    transform: translateY(-100px);
+    
     #page-background-overlay{
         min-height: 100vh;
         background-color: rgb(224, 250, 255);
         opacity: 0.05;
-        z-index: 1;
     }
  
     #page-background-image{
@@ -50,14 +62,6 @@ html{
 
     @media only screen and (min-width: 798px) {
         padding: 0em 2.5em;
-    }
-
-    video.background{
-        z-index: -100;
-    }
-
-    img.background{
-        z-index: -101;
     }
 
     &.active{

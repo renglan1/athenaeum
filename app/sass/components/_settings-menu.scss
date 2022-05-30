@@ -16,7 +16,6 @@
     width: 100%;
     bottom: 0;
     left: 0;
-    z-index: -200;
 
     display: flex;
     align-items: center;
@@ -44,10 +43,15 @@
 }
 
 /*"All /direct/ decendents of .settings-menu*/
-.settings-menu-options{
+#settings-menu-options{
+    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center; 
+
+    opacity: 0;
+    transition: opacity 1.5s;
 
     font-size: 35px;
 

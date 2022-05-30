@@ -13,7 +13,7 @@ setFXClass(fxState);
 setImageBackground(rootBackgroundImage, bgName);
 setImageBackground(pageBackgroundImage, bgName);
 setVideoBackground(fxState, "root", bgName);
-setVideoBackground(fxState, "page", bgName);
+setVideoBackground(fxState, "page-background-container", bgName);
 
 function setFXClass(fxState){
     if(fxState === "on"){
@@ -40,7 +40,9 @@ function setVideoBackground(fxState, parentID, bgName) {
         background.autoplay = true;
         background.src = `../res/videos/backgrounds/${bgName}.mp4`;
 
-        parent.appendChild(background);
+        if(parent != null){
+            parent.appendChild(background);
+        }
     }
     else{
         if(background = document.querySelector("video.background")){
@@ -50,5 +52,7 @@ function setVideoBackground(fxState, parentID, bgName) {
 }
 
 function setImageBackground(element, bgName){
-    element.src = `../res/images/backgrounds/${bgName}.png`;
+    if(element != null){
+        element.src = `../res/images/backgrounds/${bgName}.png`;
+    }
 }

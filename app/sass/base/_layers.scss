@@ -1,0 +1,20 @@
+/*COMPONENT: Settings menu*/
+#settings-menu{
+    z-index: -300;
+}
+
+/*Root*/
+#root{
+    video.background{
+        z-index: -100;
+    }
+
+    img.background{
+        z-index: -200;
+    }
+}
+
+#page-container{
+    z-index: -350;
+}
+
