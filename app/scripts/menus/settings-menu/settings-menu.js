@@ -2,8 +2,8 @@ const settingsMenu = document.querySelector("#settings-menu");
 const settingsMenuOptions = document.querySelector("#settings-menu-options");
 const settingsMenuToggle = document.querySelector("#settings-menu-toggle");
 
-const revealAmountPx = "100";
-const previewAmountVH = "0.5";
+const settingsMenuRevealAmountPx = "100";
+const settingsMenuPreviewAmountPx = "8";
 
 let isSettingsMenuRevealed = false;
 let isSettingsMenuPreviewed = false;
@@ -13,7 +13,7 @@ settingsMenuToggle.addEventListener("click", function(){
         hideSettingsMenu();
     }
     else{
-        revealSettingsMenu(revealAmountPx, "px");
+        revealSettingsMenu(settingsMenuRevealAmountPx, "px");
     }
 });
 
@@ -21,7 +21,7 @@ settingsMenuToggle.addEventListener("mouseenter", function(){
     settingsMenuToggle.style.transform = "scale(1.6)";
     
     if(!isSettingsMenuRevealed){
-        previewSettingsMenu(previewAmountVH, "vh");
+        previewSettingsMenu(settingsMenuPreviewAmountPx, "px");
     }
 });
 
@@ -29,31 +29,29 @@ settingsMenuToggle.addEventListener("mouseleave", function() {
     settingsMenuToggle.style.transform = "scale(1.5)";
 
     if(!isSettingsMenuRevealed){
-        hideSettingsMenu("px");
+        hideSettingsMenu();
     }
 });
 
 function revealSettingsMenu(amount, units){    
     isSettingsMenuRevealed = true;
     settingsMenuOptions.style.opacity = "1";
-
-    root.style.bottom = `${amount}${units}`;
-    header.style.transform = `translateY(${amount}${units})`;
     settingsMenuToggle.classList = "fa-solid fa-xmark";
+
+    translatePage(amount, units, "up");
 }
 
 function previewSettingsMenu(amount, units){
     isSettingsMenuPreviewed = true;
-
-    root.style.bottom = `${amount}${units}`;
+    
+    translatePage(amount, units, "up");
 }
 
 function hideSettingsMenu(){
     isSettingsMenuRevealed = false;
     isSettingsMenuPreviewed = false;
     settingsMenuOptions.style.opacity = "0";
-
-    root.style.bottom = "0px";
-    header.style.transform = "none";
     settingsMenuToggle.classList = "fa-solid fa-ellipsis";
+
+    translatePage(0, "px", "down");
 }

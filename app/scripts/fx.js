@@ -28,7 +28,6 @@ function setFXClass(fxState){
 
 function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix, bgName) {
     const parent = document.querySelector(`${parentPrefix}${parentName}${parentSuffix}`);
-    console.log(parent);
     
     if (fxState === "on") {
         const background = document.createElement("video");

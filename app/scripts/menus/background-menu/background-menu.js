@@ -1,24 +1,23 @@
 const backgroundMenuButton = document.querySelector("#background-button");
-const backgroundMenuRevealed = "400px";
-const backgroundMenuHidden = "0px";
+const bgMenuRevealAmountPx = "400";
 
 let isBackgroundMenuHidden = true;
 
 backgroundMenuButton.addEventListener("click", function(){
     if(isBackgroundMenuHidden){
-        revealBackgroundMenu();
+        revealBackgroundMenu(bgMenuRevealAmountPx, "px");
     }
     else{
         hideBackgroundMenu();
     }
 })
 
-function revealBackgroundMenu(){
+function revealBackgroundMenu(amount, units){
     isBackgroundMenuHidden = false;
     
-    root.style.bottom = backgroundMenuRevealed;
-    page.style.height = backgroundMenuHidden;
-    header.style.transform = `translateY(${backgroundMenuRevealed})`;
+    translateMenuBackground(amount, units, "up");
+    translateRoot(amount, units, "up");
+    translateHeader(amount, units, "down");
 }
 
 function hideBackgroundMenu(){

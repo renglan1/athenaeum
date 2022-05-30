@@ -221,7 +221,7 @@ html {
 }
 
 #page-background-container {
-  transform: translateY(-100px);
+  transform: translateY(0px);
 }
 #page-background-container #page-background-overlay {
   min-height: 100vh;
@@ -242,7 +242,6 @@ html {
   min-width: 100vw;
   height: 100%;
   padding: 0em 1em;
-  transition: bottom 0.5s;
 }
 @media only screen and (min-width: 798px) {
   #root {
