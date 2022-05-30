@@ -57,15 +57,24 @@
     }
 }
 
-#settings-menu-toggle{
-    @include fonts.contrast-font(white);
-    
-    font-size: 1.5em;
+#settings-menu-toggle-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
+    height: 50px;
+    width: 50px;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    transition: 0.5s;
+}
+
+#settings-menu-toggle{
+    @include fonts.contrast-font(white);
+    
+    transform: scale(1.5);
+    transition: transform 0.5s;
 
     &:hover{
         cursor: pointer;

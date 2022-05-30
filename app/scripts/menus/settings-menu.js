@@ -17,7 +17,8 @@ settingsMenuToggle.addEventListener("click", function(){
 });
 
 settingsMenuToggle.addEventListener("mouseenter", function(){
-    settingsMenuToggle.style.transform = "translateX(-50%) translateY(-0.5vh) scale(1.1)";
+    settingsMenuToggle.style.transform = "scale(1.6)";
+    console.log(window.getComputedStyle(settingsMenuToggle).getPropertyValue("transform"));
     
     if(!isSettingsMenuRevealed){
         previewSettingsMenu();
@@ -25,7 +26,7 @@ settingsMenuToggle.addEventListener("mouseenter", function(){
 });
 
 settingsMenuToggle.addEventListener("mouseleave", function() {
-    settingsMenuToggle.style.transform = "translateX(-50%) translateY(-0.5vh) scale(1)";
+    settingsMenuToggle.style.transform = "scale(1.5)";
 
     if(!isSettingsMenuRevealed){
         hideSettingsMenu();
