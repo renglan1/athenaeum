@@ -12,8 +12,8 @@ bgName = localStorage.getItem("bgName");
 setFXClass(fxState);
 setImageBackground(rootBackgroundImage, bgName);
 setImageBackground(pageBackgroundImage, bgName);
-setVideoBackground(fxState, "root", bgName);
-setVideoBackground(fxState, "page-background-container", bgName);
+setVideoBackground(fxState, "#", "root", "", bgName);
+setVideoBackground(fxState, "div#", "page", "-background-container", bgName);
 
 function setFXClass(fxState){
     if(fxState === "on"){
@@ -26,13 +26,14 @@ function setFXClass(fxState){
     }
 }
 
-function setVideoBackground(fxState, parentID, bgName) {
-    const parent = document.querySelector(`#${parentID}`);
+function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix, bgName) {
+    const parent = document.querySelector(`${parentPrefix}${parentName}${parentSuffix}`);
+    console.log(parent);
     
     if (fxState === "on") {
         const background = document.createElement("video");
         background.className = "background";
-        background.id = `${parentID}-background-video`;
+        background.id = `${parentName}-background-video`;
 
         background.setAttribute("preload", "none");
         background.muted = true;
@@ -41,7 +42,7 @@ function setVideoBackground(fxState, parentID, bgName) {
         background.src = `../res/videos/backgrounds/${bgName}.mp4`;
 
         if(parent != null){
-            parent.appendChild(background);
+            parent.insertBefore(background, parent.childNodes[0]);
         }
     }
     else{

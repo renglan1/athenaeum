@@ -4,14 +4,12 @@
 }
 
 /*Root*/
-#root{
-    video.background{
-        z-index: -100;
-    }
+video.background{
+    z-index: -100;
+}
 
-    img.background{
-        z-index: -200;
-    }
+img.background{
+    z-index: -200;
 }
 
 #page-container{

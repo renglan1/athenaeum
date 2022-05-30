@@ -5,7 +5,7 @@ fxToggleButton.addEventListener("click", function(){
     toggleFX(fxState, bgName);
 });
 
-const containerIDs = ["root", "page"];
+const containers = [["div#", "root", ""], ["div#", "page", "-background-container"]];
 
 function toggleFX(fxState, bgName) {
     const html = document.querySelector("html");
@@ -14,8 +14,8 @@ function toggleFX(fxState, bgName) {
     html.classList.toggle("fx");
     localStorage.setItem("fxState", invertedState);
 
-    for(const containerID of containerIDs){
-        setVideoBackground(invertedState, containerID, bgName);
+    for(const container of containers){
+        setVideoBackground(invertedState, container[0], container[1], container[2], bgName);
     }
 }
 
