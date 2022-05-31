@@ -6,14 +6,15 @@ const rootBackgroundImage = document.querySelector("img#root-background-image");
 const pageBackgroundImage = document.querySelector("img#page-background-image");
 
 // !!TEMP!!
-localStorage.setItem("bgName", "pan");
+localStorage.setItem("bgName", "tiamat");
+localStorage.setItem("bgQuality", "hd");
 bgName = localStorage.getItem("bgName");
 
 setFXClass(fxState);
-setImageBackground(rootBackgroundImage, bgName);
-setImageBackground(pageBackgroundImage, bgName);
-setVideoBackground(fxState, "#", "root", "", bgName);
-setVideoBackground(fxState, "div#", "page", "-background-container", bgName);
+setImageBackground(rootBackgroundImage);
+setImageBackground(pageBackgroundImage);
+setVideoBackground(fxState, "#", "root", "");
+setVideoBackground(fxState, "div#", "page", "-background-container");
 
 function setFXClass(fxState){
     if(fxState === "on"){
@@ -26,9 +27,11 @@ function setFXClass(fxState){
     }
 }
 
-function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix, bgName) {
+function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix) {
     const parent = document.querySelector(`${parentPrefix}${parentName}${parentSuffix}`);
-    
+    const bgName = localStorage.getItem("bgName");
+    const bgQuality = localStorage.getItem("bgQuality");
+
     if (fxState === "on") {
         const background = document.createElement("video");
         background.className = "background";
@@ -38,7 +41,7 @@ function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix, bgN
         background.muted = true;
         background.loop = true;
         background.autoplay = true;
-        background.src = `../res/videos/backgrounds/${bgName}.mp4`;
+        background.src = `../res/videos/backgrounds/${bgQuality}/${bgName}.mp4`;
 
         if(parent != null){
             parent.insertBefore(background, parent.childNodes[0]);
@@ -51,7 +54,7 @@ function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix, bgN
     }
 }
 
-function setImageBackground(element, bgName){
+function setImageBackground(element){
     if(element != null){
         element.src = `../res/images/backgrounds/${bgName}.png`;
     }
