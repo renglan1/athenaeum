@@ -8,7 +8,7 @@
 
 @import "components/header";
 @import "components/settings-menu/settings-menu";
-@import "components/settings-menu/background-select";
+@import "components/settings-menu/settings-menu-background-select";
 
 html{
     @include fonts.default-font;

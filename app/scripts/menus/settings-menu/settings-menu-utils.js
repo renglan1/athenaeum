@@ -15,6 +15,9 @@ function previewSettingsMenu(amount, units) {
 function hideSettingsMenu(distance, units) {
     isSettingsMenuRevealed = false;
     isSettingsMenuPreviewed = false;
+    isBackgroundSelectRevealed = false;
+    isBackgroundSelectPreviewed = false;
+
     settingsMenuOptions.style.opacity = "0";
     settingsMenuToggle.classList = "fa-solid fa-ellipsis";
 

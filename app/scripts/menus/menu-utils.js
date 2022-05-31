@@ -1,7 +1,7 @@
 const menuParameters = {
     menuPreview: {
-        height: 8,
-        units: "px"
+        height: 0.8,
+        units: "vh"
     },
     settingsMenu: {
         height: 12,
