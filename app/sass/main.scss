@@ -7,8 +7,8 @@
 @import "base/layers";
 
 @import "components/header";
-@import "components/settings-menu";
-@import "components/background-menu";
+@import "components/settings-menu/settings-menu";
+@import "components/settings-menu/background-select";
 
 html{
     @include fonts.default-font;
