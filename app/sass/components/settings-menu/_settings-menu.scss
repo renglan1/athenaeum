@@ -1,5 +1,5 @@
-@use "../base/fonts";
-@use "../base/globals";
+@use "../../base/fonts";
+@use "../../base/globals";
 
 @mixin menu-option{
     &:hover{
@@ -12,7 +12,7 @@
     @include fonts.contrast-font(white);
     
     position: absolute;
-    height: globals.$settings-menu-size; 
+    height: globals.$settings-menu-height; 
     width: 100%;
     bottom: 0;
     left: 0;
@@ -23,7 +23,7 @@
     
     span{
         position: absolute;
-        font-size: 4.5em;
+        font-size: 8vh;
         right: 1vw;
 
         transition: font-size display 0.5s;
@@ -44,8 +44,8 @@
 
     opacity: 0;
     transition: opacity 0.75s;
-
-    font-size: 35px;
+ 
+    font-size: 4vh;
 
     > *{
         @include menu-option;
@@ -59,9 +59,7 @@
     justify-content: center;
 
     position: absolute;
-    height: 50px;
-    width: 50px;
-    bottom: 10px;
+    bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -69,6 +67,7 @@
 #settings-menu-toggle{
     @include fonts.contrast-font(white);
     
+    font-size: 2vh;
     transform: scale(1.5);
     transition: transform 0.5s;
 

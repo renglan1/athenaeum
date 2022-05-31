@@ -1,23 +1,17 @@
 const backgroundSelectButton = document.querySelector("#background-select-button");
-const bgMenuRevealAmountPx = "400";
 
 let isBackgroundSelectHidden = true;
 
+const backgroundSelectParams = {
+    amount: menuParameters.backgroundSelect.height,
+    units: menuParameters.backgroundSelect.units
+}
+
 backgroundSelectButton.addEventListener("click", function(){
     if(isBackgroundSelectHidden){
-        revealBackgroundSelect(bgMenuRevealAmountPx, "px");
+        revealBackgroundSelect(backgroundSelectParams.amount, backgroundSelectParams.units);
     }
     else{
-        hideBackgroundSelect(settingsMenuRevealAmountPx + bgMenuRevealAmountPx);
+        hideBackgroundSelect(backgroundSelectParams.amount, backgroundSelectParams.units);
     }
-})
-
-function revealBackgroundSelect(amount, units){
-    isBackgroundSelectHidden = false;
-    
-    translatePage(amount, units, bgMenuRevealAmountPx, "up");
-}
-
-function hideBackgroundSelect(){
-    isBackgroundSelectHidden = true;
-}
+});

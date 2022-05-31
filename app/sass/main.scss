@@ -14,6 +14,10 @@ html{
     @include fonts.default-font;
 }
 
+body{
+    min-width: 300px;
+}
+
 #page-container{
     position: absolute;
     width: 100vw;
@@ -70,7 +74,7 @@ html{
     }
 
     &.active{
-        bottom: globals.$settings-menu-size;
+        bottom: globals.$settings-menu-height;
     }
 }
 
