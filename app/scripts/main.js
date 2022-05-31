@@ -3,7 +3,7 @@ const menuItemIDs = ["#settings-menu", "#settings-menu-toggle"];
 // Automatic hiding of the menu when page clicked
 window.addEventListener("click", function (event) {
     if (isClickOffMenu(gatherMenuItems(), event)) {
-        hideSettingsMenu();
+        hideSettingsMenu(calcRootOffset(), settingsMenuParams.units);
     }
 });
 
