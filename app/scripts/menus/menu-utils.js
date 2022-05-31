@@ -2,6 +2,8 @@ const header = document.querySelector("header");
 const pageContainer = document.querySelector("#page-container");
 const pageBgContainer = document.querySelector("#page-background-container");
 
+const menuPreviewAmountPx = 8;
+
 let rootOffset = 0;
 
 function translatePage(amount, units, distance, direction){
@@ -35,7 +37,7 @@ function calcRootOffset(){
     const rootBottom = root.getBoundingClientRect().bottom;
     const rootOffset = document.documentElement.clientHeight - rootBottom;
     
-    if(rootOffset < settingsMenuPreviewAmountPx){
+    if(rootOffset < menuPreviewAmountPx){
         return 0;
     }
 

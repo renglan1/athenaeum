@@ -1,4 +1,4 @@
-function revealSettingsMenu(amount, units){    
+function revealSettingsMenu(amount, units) {
     isSettingsMenuRevealed = true;
     settingsMenuOptions.style.opacity = "1";
     settingsMenuToggle.classList = "fa-solid fa-xmark";
@@ -6,17 +6,17 @@ function revealSettingsMenu(amount, units){
     translatePage(amount, units, settingsMenuRevealAmountPx, "up");
 }
 
-function previewSettingsMenu(amount, units){
+function previewSettingsMenu(amount, units) {
     isSettingsMenuPreviewed = true;
-    
-    translatePage(amount, units, settingsMenuPreviewAmountPx, "up");
+
+    translatePage(amount, units, menuPreviewAmountPx, "up");
 }
 
-function hideSettingsMenu(distance){
+function hideSettingsMenu(distance) {
     isSettingsMenuRevealed = false;
     isSettingsMenuPreviewed = false;
     settingsMenuOptions.style.opacity = "0";
     settingsMenuToggle.classList = "fa-solid fa-ellipsis";
-    
+
     translatePage(0, "px", distance, "down");
 }
