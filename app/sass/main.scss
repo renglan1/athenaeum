@@ -16,19 +16,18 @@ html{
 
 #page-container{
     position: absolute;
-    min-width: 100vw;
+    width: 100vw;
     height: 100vh;
-    overflow: clip;
+    overflow-y: clip;
 }
 
 #page{
     position: absolute;
-    overflow: clip;
     width: 100%;
     height: 100%;
     top: 0;
     transform: translateY(100vh);
-    overflow: visible;
+    overflow-y: visible;
 }
 
 #page-background-container{
@@ -53,7 +52,7 @@ html{
     position: absolute;
     display: flex;
     bottom: 0; 
-    min-width: 100vw;
+    width: 100%;
     height: 100%;
     padding: 0em 1em;
 
@@ -70,8 +69,10 @@ html{
     position: absolute;
     top: 0;
     left: 0;
+    
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 

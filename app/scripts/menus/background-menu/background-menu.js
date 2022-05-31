@@ -8,16 +8,14 @@ backgroundMenuButton.addEventListener("click", function(){
         revealBackgroundMenu(bgMenuRevealAmountPx, "px");
     }
     else{
-        hideBackgroundMenu();
+        hideBackgroundMenu(settingsMenuRevealAmountPx + bgMenuRevealAmountPx);
     }
 })
 
 function revealBackgroundMenu(amount, units){
     isBackgroundMenuHidden = false;
     
-    translateMenuBackground(amount, units, "up");
-    translateRoot(amount, units, "up");
-    translateHeader(amount, units, "down");
+    translatePage(amount, units, bgMenuRevealAmountPx, "up");
 }
 
 function hideBackgroundMenu(){

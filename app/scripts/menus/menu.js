@@ -4,26 +4,14 @@ const pageBgContainer = document.querySelector("#page-background-container");
 
 let rootOffset = 0;
 
-function translatePage(amount, units, direction){
-    translateMenuBackground(amount, units, direction);
-    translateRoot(amount, units, direction);
-    translateHeader(amount, units, invertDirection(direction));
+function translatePage(amount, units, distance, direction){
+    translateElementY(pageBgContainer, amount, units, distance, direction, 0, 0.5);
+    translateElementY(root, amount, units, distance, direction, 0, 0.5);
+    translateElementY(header, amount, units, distance, invertDirection(direction), 0.25, 0.5);
 }
 
-function translateMenuBackground(amount, units, direction){
-    translateElementY(pageBgContainer, amount, units, direction, 0);
-}
-
-function translateRoot(amount, units, direction){
-    translateElementY(root, amount, units, direction, 0);
-}
-
-function translateHeader(amount, units, direction){
-    translateElementY(header, amount, units, direction, 0.25);
-}
-
-function translateElementY(element, amount, units, direction, delay){
-    element.style.transition = `${calcTransitionDelay(amount) + delay}s`;
+function translateElementY(element, amount, units, distance, direction, extraDelay, minDelay){
+    element.style.transition = `transform ${calcTransitionDelay(distance, minDelay) + extraDelay}s`;
     if(direction === "up"){
         element.style.transform = `translateY(${-(amount)}${units})`;
     }
@@ -32,16 +20,17 @@ function translateElementY(element, amount, units, direction, delay){
     }
 }
 
-function calcTransitionDelay(distanceInPixels){
+function calcTransitionDelay(distanceInPixels, minDelay){
     const result = Math.abs(distanceInPixels)/200;
 
-    if(result < 0.5){
-        return 0.5;
+    if(result < minDelay){
+        return minDelay;
     }
 
     return result;
 }
 
+// Finds the distance from the bottom of "root" to the bottom of the page in VH
 function calcRootOffset(){
     const rootBottom = root.getBoundingClientRect().bottom;
     const rootOffset = document.documentElement.clientHeight - rootBottom;

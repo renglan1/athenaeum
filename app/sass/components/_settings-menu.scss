@@ -23,18 +23,10 @@
     
     span{
         position: absolute;
-        font-size: 3.5em;
+        font-size: 4.5em;
         right: 1vw;
 
         transition: font-size display 0.5s;
-    
-        @media only screen and (min-width: 1920px){
-            font-size: 4.5em;
-        }
-
-        @media only screen and (min-width: 798px){
-            font-size: 4em;
-        }
     
         @media only screen and (max-width: 500px){
             display: none;
@@ -51,7 +43,7 @@
     justify-content: center; 
 
     opacity: 0;
-    transition: opacity 1.5s;
+    transition: opacity 0.75s;
 
     font-size: 35px;
 

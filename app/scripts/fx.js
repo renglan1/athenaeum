@@ -6,7 +6,7 @@ const rootBackgroundImage = document.querySelector("img#root-background-image");
 const pageBackgroundImage = document.querySelector("img#page-background-image");
 
 // !!TEMP!!
-localStorage.setItem("bgName", "neptune");
+localStorage.setItem("bgName", "abyss");
 bgName = localStorage.getItem("bgName");
 
 setFXClass(fxState);

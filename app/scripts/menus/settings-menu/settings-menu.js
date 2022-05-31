@@ -10,7 +10,7 @@ let isSettingsMenuPreviewed = false;
 
 settingsMenuToggle.addEventListener("click", function(){
     if(isSettingsMenuRevealed){
-        hideSettingsMenu();
+        hideSettingsMenu(calcRootOffset());
     }
     else{
         revealSettingsMenu(settingsMenuRevealAmountPx, "px");
@@ -29,7 +29,7 @@ settingsMenuToggle.addEventListener("mouseleave", function() {
     settingsMenuToggle.style.transform = "scale(1.5)";
 
     if(!isSettingsMenuRevealed){
-        hideSettingsMenu();
+        hideSettingsMenu(calcRootOffset());
     }
 });
 
@@ -38,20 +38,20 @@ function revealSettingsMenu(amount, units){
     settingsMenuOptions.style.opacity = "1";
     settingsMenuToggle.classList = "fa-solid fa-xmark";
 
-    translatePage(amount, units, "up");
+    translatePage(amount, units, settingsMenuRevealAmountPx, "up");
 }
 
 function previewSettingsMenu(amount, units){
     isSettingsMenuPreviewed = true;
     
-    translatePage(amount, units, "up");
+    translatePage(amount, units, settingsMenuPreviewAmountPx, "up");
 }
 
-function hideSettingsMenu(){
+function hideSettingsMenu(distance){
     isSettingsMenuRevealed = false;
     isSettingsMenuPreviewed = false;
     settingsMenuOptions.style.opacity = "0";
     settingsMenuToggle.classList = "fa-solid fa-ellipsis";
-
-    translatePage(0, "px", "down");
+    
+    translatePage(0, "px", distance, "down");
 }
