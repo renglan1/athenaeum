@@ -70,6 +70,10 @@ img.background {
   z-index: -200;
 }
 
+#root-background-overlay.background {
+  z-index: -50;
+}
+
 #page-container {
   z-index: -400;
 }
@@ -213,6 +217,9 @@ html {
 }
 #page-background-container #page-background-overlay {
   min-height: 100vh;
+  position: relative;
+  background-color: rgb(224, 250, 255);
+  opacity: 0.05;
 }
 #page-background-container #page-background-image {
   min-height: 100vh;
@@ -231,6 +238,11 @@ html {
   height: 100%;
   padding: 0em 1em;
 }
+#root #root-background-overlay.background {
+  min-height: 100vh;
+  background-color: #001629;
+  opacity: 0.2;
+}
 @media only screen and (min-width: 798px) {
   #root {
     padding: 0em 2.5em;
@@ -247,12 +259,6 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.overlay {
-  position: relative;
-  background-color: rgb(224, 250, 255);
-  opacity: 0.05;
 }
 
 /*# sourceMappingURL=main.css.map */

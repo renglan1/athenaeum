@@ -12,6 +12,10 @@ img.background{
     z-index: -200;
 }
 
+#root-background-overlay.background{
+    z-index: -50;
+}
+
 #page-container{
     z-index: -400;
 }

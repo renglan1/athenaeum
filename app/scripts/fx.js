@@ -6,7 +6,7 @@ const rootBackgroundImage = document.querySelector("img#root-background-image");
 const pageBackgroundImage = document.querySelector("img#page-background-image");
 
 // !!TEMP!!
-localStorage.setItem("bgName", "abyss");
+localStorage.setItem("bgName", "pan");
 bgName = localStorage.getItem("bgName");
 
 setFXClass(fxState);
