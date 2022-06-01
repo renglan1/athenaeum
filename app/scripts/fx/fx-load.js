@@ -13,5 +13,5 @@ bgName = localStorage.getItem("bgName");
 setFXClass(fxState);
 setImageBackground(rootBackgroundImage);
 setImageBackground(pageBackgroundImage);
-setVideoBackground(fxState, "#", "root", "");
+setVideoBackground(fxState, "div#", "root", "");
 setVideoBackground(fxState, "div#", "page", "-background-container");

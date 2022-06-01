@@ -1,25 +1,28 @@
 @use "../../base/globals";
 
 #settings-menu-background-select{
-    
+
 }
 
 #background-select-options{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row wrap; 
+    row-gap: 3vh;
     
-    overflow: hidden;
     justify-content: center;
 
     min-height: 23vh;
+    width: 90vw;
 }
 
 .background-select-option{
     height: 20vh;
-    object-fit: cover;
+    object-fit: contain;
     padding: 0 15px 15px 20px;
 
     img, video{
+        object-fit: cover;
+        
         height: 100%;
         width: 100%;
         border-radius: 8px;
