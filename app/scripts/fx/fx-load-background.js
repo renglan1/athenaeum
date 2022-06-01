@@ -19,38 +19,52 @@ function setFXClass(fxState){
 
 function refreshBackgrounds(){
     const fxState = localStorage.getItem("fxState");
-    
     const rootBackgroundImage = document.querySelector("img#root-background-image");
     const pageBackgroundImage = document.querySelector("img#page-background-image");
 
-    const rootBackgroundVideo = document.querySelector("video#root-background-video");
-    const pageBackgroundVideo = document.querySelector("video#page-background-video");
-
-    setImageSrc(rootBackgroundImage);
-    setImageSrc(pageBackgroundImage);
-    setVideoSrc(fxState, pageBackgroundVideo);
-    setVideoSrc(fxState, rootBackgroundVideo);
+    setImageBackground(rootBackgroundImage);
+    setImageBackground(pageBackgroundImage);
+    setVideoBackground(fxState, "div#", "root", "");
+    setVideoBackground(fxState, "div#", "page", "-background-container");
 }
 
-function setVideoSrc(fxState, video) {
+function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix) {
+    const parent = document.querySelector(`${parentPrefix}${parentName}${parentSuffix}`);
     const bgName = localStorage.getItem("bgName");
+    console.log(bgName);
     const bgQuality = localStorage.getItem("bgQuality");
 
     if (fxState === "on") {
-        video.src = `${bgVideosPath}/${bgQuality}/${bgName}.mp4`;
-        video.play();
+        if(document.querySelector(`#${parentName}-background-video`)){
+            document.querySelector(`#${parentName}-background-video`).remove();
+        }
+        
+        const background = document.createElement("video");
+        
+        background.className = "background";
+        background.id = `${parentName}-background-video`;
+
+        background.setAttribute("preload", "none");
+        background.muted = true;
+        background.loop = true;
+        background.autoplay = true;
+        background.src = `${bgVideosPath}/${bgQuality}/${bgName}.mp4`;
+
+        if(parent != null){
+            parent.insertBefore(background, parent.childNodes[0]);
+        }
     }
     else{
-        video.pause();
-        video.removeAttribute('src');
-        video.load();
+        if(document.querySelector("video.background") != null){
+            document.querySelector("video.background").remove();
+        } 
     }
 }
 
-function setImageSrc(image){
+function setImageBackground(element){
     const bgName = localStorage.getItem("bgName");
 
-    if(image != null){
-        image.src = `${bgImagesPath}/${bgName}.png`;
+    if(element != null){
+        element.src = `${bgImagesPath}/${bgName}.png`;
     }
 }

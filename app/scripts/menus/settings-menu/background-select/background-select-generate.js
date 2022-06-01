@@ -1,7 +1,5 @@
 localStorage.setItem("bgQuality", "4k");
 
-window.addEventListener("load", refreshBgOptions());
-
 function refreshBgOptions(){
     const bgSelectOptions = document.getElementById("background-select-options");
     bgSelectOptions.textContent = "";
