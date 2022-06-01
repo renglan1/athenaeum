@@ -1,6 +1,3 @@
-localStorage.setItem("bgName", "firelink");
-localStorage.setItem("bgQuality", "4k");
-let bgName = localStorage.getItem("bgName");
 
 window.addEventListener("load", function(){
     setFXClass(localStorage.getItem("fxState"));
@@ -44,7 +41,7 @@ function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix) {
         background.muted = true;
         background.loop = true;
         background.autoplay = true;
-        background.src = `../res/videos/backgrounds/${bgQuality}/${bgName}.mp4`;
+        background.src = `${bgVideosPath}/${bgQuality}/${bgName}.mp4`;
 
         if(parent != null){
             parent.insertBefore(background, parent.childNodes[0]);
@@ -58,7 +55,9 @@ function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix) {
 }
 
 function setImageBackground(element){
+    const bgName = localStorage.getItem("bgName");
+    
     if(element != null){
-        element.src = `../res/images/backgrounds/${bgName}.png`;
+        element.src = `${bgImagesPath}/${bgName}.png`;
     }
 }

@@ -23,7 +23,7 @@
 
     <!--Scripts-->
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/sources.js" defer></script>
+    <script src="scripts/paths.js" defer></script>
 
     <script src="scripts/fx/fx-load-background.js" defer></script>
 
@@ -34,6 +34,7 @@
 
     <script src="scripts/menus/settings-menu/optimization/toggle-fx.js" defer></script>
 
+    <script src="scripts/menus/settings-menu/background-select/background-select-constants.js" defer></script>
     <script src="scripts/menus/settings-menu/background-select/background-select-int.js" defer></script>
     <script src="scripts/menus/settings-menu/background-select/background-select-utils.js" defer></script>
     <script src="scripts/menus/settings-menu/background-select/background-select-generate.js" defer></script>
@@ -56,20 +57,12 @@
                     </div>
                     <div id="settings-menu-background-select">
                         <div id="background-select-options">
-                            <div id="tiamat" class="background-select-option">
-                                <img src="../res/images/backgrounds/tiamat.png" alt="">
-                            </div>
-                            <div id="astral" class="background-select-option">
-                                <img src="../res/images/backgrounds/astral.png" alt="">
-                            </div>
-                            <div id="abyss" class="background-select-option">
-                                <img src="../res/images/backgrounds/abyss.png" alt="">
-                            </div>
-                            <div id="pan" class="background-select-option">
-                                <img src="../res/images/backgrounds/pan.png" alt="">
-                            </div>
-                            <div id="embers" class="background-select-option">
-                                <img src="../res/images/backgrounds/embers.png" alt="">
+                            <div class="background-select-option" id="abyss">
+                                <img src="../res/images/backgrounds/abyss.png">
+                                
+                                <div class="background-select-option-preview">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
