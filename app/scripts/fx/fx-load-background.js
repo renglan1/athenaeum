@@ -31,7 +31,6 @@ function refreshBackgrounds(){
 function setVideoBackground(fxState, parentPrefix, parentName, parentSuffix) {
     const parent = document.querySelector(`${parentPrefix}${parentName}${parentSuffix}`);
     const bgName = localStorage.getItem("bgName");
-    console.log(bgName);
     const bgQuality = localStorage.getItem("bgQuality");
 
     if (fxState === "on") {

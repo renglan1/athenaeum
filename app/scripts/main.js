@@ -30,5 +30,4 @@ function isClickOffMenu(menuItems, event) {
 function refresh(){
     refreshBackgrounds();
     refreshBgOptions();
-    refreshBackgroundSelectPreviewEventListeners();
 }

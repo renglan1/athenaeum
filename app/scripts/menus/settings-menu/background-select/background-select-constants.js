@@ -1,1 +1,1 @@
-const bgNames = ["abyss", "astral", "embers", "firelink", "neptune", "pan", "tiamat"];
+const bgNames = ["firelink", "neptune", "pan", "tiamat", "abyss", "astral", "embers"];
