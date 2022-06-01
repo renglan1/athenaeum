@@ -192,9 +192,6 @@ header .icon-athenaeum {
   width: 45vh;
   padding: 0 15px 15px 20px;
 }
-.background-select-option:hover {
-  cursor: pointer;
-}
 
 .background-select-option-title {
   color: white;
@@ -231,6 +228,9 @@ header .icon-athenaeum {
   border-radius: inherit;
   height: 100%;
   width: 100%;
+}
+.background-select-option-preview:hover {
+  cursor: pointer;
 }
 
 html {
