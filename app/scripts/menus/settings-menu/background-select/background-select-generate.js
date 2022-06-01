@@ -52,11 +52,14 @@ function createBgSelectOptionPreview(fxState, bgName, bgQuality) {
     }
     else{
         const image = bgSelectOptionPreview.querySelector("img");
-        const video = bgSelectOptionPreview.querySelector("video");
+        setGrayscale(image, "off", 2);
+
+        if(fxState === "on"){
+            const video = bgSelectOptionPreview.querySelector("video");
+            setGrayscale(video, "off", 2);
+        }
 
         setGrayscale(bgSelectOptionPreview, "off", 0);
-        setGrayscale(image, "off", 2);
-        setGrayscale(video, "off", 2);
     }
 
     return bgSelectOptionPreview;
@@ -94,13 +97,13 @@ function attachBgSelectOptionPreviewEventListeners(bgSelectOptionPreview, bgName
         if (bgSelectOptionPreviewVideo != null) {
             try {
                 await bgSelectOptionPreviewVideo.play();
-                bgSelectOptionPreview.style.cursor = "pointer";
             }
             catch (e) {
                 console.log(e);
             }
         }
 
+        bgSelectOptionPreview.style.cursor = "pointer";
         setGrayscale(bgSelectOptionPreview, "off", 0);
         bgSelectOptionPreviewTitle.style.width = "65%";
     });
