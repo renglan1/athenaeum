@@ -141,7 +141,7 @@ header .icon-athenaeum {
   flex: 0 0 100%;
   min-height: 12vh;
   display: flex;
-  column-gap: 2em;
+  column-gap: 6vh;
   align-items: center;
   justify-content: center;
   opacity: 0;
