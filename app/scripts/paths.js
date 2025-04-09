@@ -1,2 +1,2 @@
-const bgImagesPath = "../res/images/backgrounds";
-const bgVideosPath = "../res/videos/backgrounds";
+const bgImagesPath = "res/images/backgrounds";
+const bgVideosPath = "res/videos/backgrounds";
